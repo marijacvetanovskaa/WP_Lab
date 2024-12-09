@@ -6,8 +6,12 @@
 
 </head>
 <body>
+
 <!-- dynamically display data -->
 <div xmlns:th="http://www.thymeleaf.org">
+    <a th:href="@{'/songs'}">
+    <button>Home</button>
+    </a>
         <header>
             <h1>Song title: <span th:text="${song.getTitle()}"></span></h1>
         </header>

@@ -2,6 +2,7 @@ package mk.finki.ukim.mk.lab.web.controller;
 
 import lombok.AllArgsConstructor;
 import mk.finki.ukim.mk.lab.model.Artist;
+import mk.finki.ukim.mk.lab.model.Song;
 import mk.finki.ukim.mk.lab.service.ArtistService;
 import mk.finki.ukim.mk.lab.service.SongService;
 import org.springframework.stereotype.Controller;
@@ -33,8 +34,9 @@ public class ArtistController {
                            @RequestParam String artistId) {
 
         Artist chosenArtist = artistService.findById(Long.parseLong(artistId));
-        songService.addArtistToSong(chosenArtist, songService.findByTrackId(trackId));
+        Song song = songService.findByTrackId(trackId);
+        songService.addArtistToSong(Long.parseLong(artistId), song.getId());
 
-        return "redirect:/songDetails?trackId=" + trackId;
+        return "redirect:/songs/details/" + song.getId().toString();
     }
 }

@@ -1,4 +1,4 @@
-package mk.finki.ukim.mk.lab.repository;
+package mk.finki.ukim.mk.lab.repository.old;
 
 import mk.finki.ukim.mk.lab.model.Artist;
 import org.springframework.stereotype.Repository;
@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository
+//@Repository
 public class ArtistRepository {
     List <Artist> artists = List.of(
             new Artist(1L, "Freddie", "Mercury", "The legendary lead vocalist of the rock band Queen, known for his powerful voice and flamboyant stage presence."),

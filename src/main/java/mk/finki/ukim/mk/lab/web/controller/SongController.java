@@ -73,4 +73,10 @@ public class SongController {
         model.addAttribute("albums", albumService.findAll());
         return "add-song";
     }
+
+    @GetMapping("/album/{albumId}")
+    public String getSongsByAlbum(@PathVariable String albumId, Model model) {
+        model.addAttribute("songs", songService.getSongsByAlbumId(Long.parseLong(albumId)));
+        return "listSongs";
+    }
 }

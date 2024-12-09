@@ -19,6 +19,9 @@
         <div th:if="${error} != null" th:text="${error}">
 
         </div>
+        <a th:href="@{'/songs'}">
+            <button>Home</button>
+        </a>
         <form th:action="@{'/songs/add-form'}" th:method="GET">
             <button>Add Song</button>
         </form>
@@ -47,6 +50,9 @@
                 <form th:action="@{'/songs/details/{id}' (id=${song.getId()})}" th:method="GET">
                     <button>Song Details</button>
                 </form>
+                <a th:href="@{'/songs/album/{albumId}' (albumId=${song.getAlbum().getId()})}">
+                    <button>View album</button>
+                </a>
             </div>
 
 

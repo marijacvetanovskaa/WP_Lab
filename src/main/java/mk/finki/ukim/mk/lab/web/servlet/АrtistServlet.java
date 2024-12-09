@@ -47,7 +47,7 @@ public class АrtistServlet extends HttpServlet {
         String artistId = req.getParameter("artistId");
         String trackId = req.getParameter("trackId");
         Artist chosenArtist = artistService.findById(Long.parseLong(artistId));
-        songService.addArtistToSong(chosenArtist, songService.findByTrackId(trackId));
+        songService.addArtistToSong(Long.parseLong(artistId), songService.findByTrackId(trackId).getId());
 
         resp.sendRedirect("/songDetails?trackId=" + trackId);
     }

@@ -1,4 +1,4 @@
-package mk.finki.ukim.mk.lab.repository;
+package mk.finki.ukim.mk.lab.repository.old;
 import mk.finki.ukim.mk.lab.model.Album;
 import mk.finki.ukim.mk.lab.model.Artist;
 import mk.finki.ukim.mk.lab.model.Song;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 
-@Repository
+//@Repository
 public class AlbumRepository {
 
     List<Album> albumsList = List.of(new Album("Abbey Road", "Rock", "1969"),
