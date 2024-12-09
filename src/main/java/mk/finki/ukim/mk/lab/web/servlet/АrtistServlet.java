@@ -1,4 +1,4 @@
-package mk.finki.ukim.mk.lab.web;
+package mk.finki.ukim.mk.lab.web.servlet;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,7 +16,7 @@ import org.thymeleaf.web.servlet.JakartaServletWebApplication;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ArtistServlet", urlPatterns = "/artist")
+@WebServlet(name = "ArtistServlet", urlPatterns = "/servlet/artist")
 public class АrtistServlet extends HttpServlet {
 
     final private ArtistService artistService;

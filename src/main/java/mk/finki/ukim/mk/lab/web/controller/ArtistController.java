@@ -18,6 +18,7 @@ public class ArtistController {
 
     final private ArtistService artistService;
     final private SongService songService;
+
     @GetMapping
     public String getArtists(@RequestParam(required = false) String trackId, Model model)
     {
@@ -25,6 +26,7 @@ public class ArtistController {
         model.addAttribute("artists", artistService.listArtists());
         return "artistList";
     }
+
     @PostMapping("/add")
     public String addArtistToSong(
                            @RequestParam String trackId,

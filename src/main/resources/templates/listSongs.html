@@ -19,7 +19,11 @@
         <div th:if="${error} != null" th:text="${error}">
 
         </div>
+        <form th:action="@{'/songs/add-form'}" th:method="GET">
+            <button>Add Song</button>
+        </form>
         <h2>Choose a song:</h2>
+
 
             <div th:each="song: ${songs}">
                 <label>Title: </label><span th:text="${song.getTitle()}"></span>
@@ -32,15 +36,16 @@
                 </form>
                 <form th:action="@{'/songs/edit-form/{id}' (id=${song.getId()})}"
                       th:method="GET">
-                    <button type="submit">
-                        <i class="fa fa-trash">Edit Song</i>
-                    </button>
+                    <button type="submit">Edit Song</button>
                 </form>
-                <form th:action="@{'/artist?trackId=' + ${song.getTrackId()}}"
-                      th:method="GET">
-                    <button type="submit">
-                        <i class="fa fa-trash">Add artist to song</i>
-                    </button>
+<!--                <form th:action="@{/artist(trackId=${song.getTrackId()})}" th:method="GET">-->
+<!--                    <button>Add artist to song</button>-->
+<!--                </form>-->
+                <a th:href="@{/artist(trackId=${song.getTrackId()})}">
+                    <button>Add artist to song</button>
+                </a>
+                <form th:action="@{'/songs/details/{id}' (id=${song.getId()})}" th:method="GET">
+                    <button>Song Details</button>
                 </form>
             </div>
 

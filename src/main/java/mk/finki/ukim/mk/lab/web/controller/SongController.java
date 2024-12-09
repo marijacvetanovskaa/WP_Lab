@@ -58,7 +58,16 @@ public class SongController {
         model.addAttribute("albums", albumService.findAll());
         return "add-song";
     }
-
+    @GetMapping("/details/{id}")
+    public String getDetails(@PathVariable Long id, Model model)
+    {
+        Song song = songService.findById(id);
+        if (song == null) {
+            return "redirect:/songs?error=NoTrackByThatIdFound";
+        }
+        model.addAttribute("song", song);
+        return "songDetails";
+    }
     @GetMapping("/add-form")
     public String getEditSongForm(Model model) {
         model.addAttribute("albums", albumService.findAll());

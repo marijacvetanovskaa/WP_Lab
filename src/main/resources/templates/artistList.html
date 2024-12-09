@@ -39,7 +39,7 @@
     <section>
         <h2>Select artist:</h2>
         <!-- Make changes to this code to dynamically display radio buttons for each artist as in the example -->
-        <form action="/artist" method="POST">
+        <form action="/artist/add" method="POST">
             <div th:each="artist: ${artists}">
                 <input type="radio" name="artistId" th:value="${artist.getId()}">
                 <label th:text="${artist.getFirstName() + ' ' + artist.getLastName()}"></label>
